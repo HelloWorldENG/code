@@ -1,0 +1,9 @@
+spring:
+    main:
+        allow-bean-definition-overriding: true
+server:
+    port: 1000
+
+application:
+    web:
+        fileTemPath: "C:\\file\\%s\\"
