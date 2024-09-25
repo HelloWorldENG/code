@@ -1,5 +1,12 @@
 # Reusable-可复用代码
 
+接口文档路径
+```
+Knife4j UI: /doc.html
+原始 Swagger UI: /swagger-ui.html
+OpenAPI JSON: /v3/api-docs
+OpenAPI YAML: /v3/api-docs.yaml
+```
 ## Excel
 ### 导出
 1.直接导出Excel：

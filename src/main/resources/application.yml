@@ -7,3 +7,14 @@ server:
 application:
     web:
         fileTemPath: "C:\\file\\%s\\"
+springdoc:
+    api-docs:
+        enabled: true
+        path: /v3/api-docs
+    swagger-ui:
+        path: /swagger-ui.html
+knife4j:
+    enable: true
+    setting:
+        language: zh_cn
+    production: false

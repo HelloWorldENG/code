@@ -25,7 +25,7 @@ public class ExcelController {
     @Operation(
             summary = "导出",
             description = "查询数据后直接导出<br>"
-                    + "流程：查询数据（可传入条件）- 构造Excel文件 - 导出Excel"
+                    + "流程：查询数据 - 构造Excel文件 - 导出Excel"
     )
     @GetMapping
     public void export(HttpServletResponse response) {

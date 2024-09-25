@@ -1,0 +1,50 @@
+openapi: 3.0.1
+info:
+  title: Reusable - 可复用代码
+  description: Reusable API文档
+  contact:
+    name: Luke Xie
+  license:
+    name: Apache 2.0
+    url: http://springdoc.org
+  version: v1.0.0
+servers:
+- url: http://localhost:1000
+  description: Generated server url
+paths:
+  /excels:
+    get:
+      tags:
+      - API - Excel
+      summary: 导出
+      description: 查询数据后直接导出<br>流程：查询数据 - 构造Excel文件 - 导出Excel
+      operationId: export
+      responses:
+        "200":
+          description: OK
+components: {}
+x-openapi:
+  x-setting:
+    customCode: 200
+    language: zh-CN
+    enableSwaggerModels: true
+    swaggerModelName: Swagger Models
+    enableReloadCacheParameter: false
+    enableAfterScript: true
+    enableDocumentManage: true
+    enableVersion: false
+    enableRequestCache: true
+    enableFilterMultipartApis: false
+    enableFilterMultipartApiMethodType: POST
+    enableHost: false
+    enableHostText: ""
+    enableDynamicParameter: false
+    enableDebug: true
+    enableFooter: true
+    enableFooterCustom: false
+    enableSearch: true
+    enableOpenApi: true
+    enableHomeCustom: false
+    enableGroup: true
+    enableResponseCode: true
+  x-markdownFiles: []

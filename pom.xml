@@ -57,6 +57,13 @@
             <version>5.2.5</version>
         </dependency>
 
+        <!--用于生成swagger.yaml-->
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.6.15</version>
+        </dependency>
+
     </dependencies>
     <dependencyManagement>
         <dependencies>
