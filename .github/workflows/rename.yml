@@ -1,0 +1,24 @@
+name: Rename API Docs and Deploy to GitHub Pages
+
+on:
+    push:
+        branches:
+            - docs  # 或你存储项目代码的主分支
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+
+            - name: Rename v3-api-docs.html to index.html
+              run: |
+                  mv ./docs/-v3-api-docs.html ./docs/index.html
+
+            - name: Deploy to GitHub Pages
+              uses: peaceiris/actions-gh-pages@v3
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  publish_dir: ./docs  # 你的文档文件夹
