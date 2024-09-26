@@ -26,7 +26,7 @@ public class FileController {
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Operation(
-            summary = "解析并返回文件内容",
+            summary = "解析文件内容",
             description = "上传文件并使用Apache Tika解析文件内容<br>"
                     + "支持解析：doc、docx、ppt、pptx、xls、xlsx、pdf、txt、md、xml、json、html、css、js、java、sql、properties、ini、yaml、yml等文件"
     )
