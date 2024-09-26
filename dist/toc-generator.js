@@ -75,7 +75,7 @@ function generateTOC(yamlData) {
   
     tocToggle.addEventListener('click', () => {
       body.classList.toggle('toc-hidden');
-      tocToggle.textContent = body.classList.contains('toc-hidden') ? '展开目录' : '收起目录';
+      tocToggle.textContent = body.classList.contains('toc-hidden') ? '目录' : '收起';
     });
   }
   
