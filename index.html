@@ -8,12 +8,83 @@
     <link rel="stylesheet" type="text/css" href="dist/index.css" />
     <link rel="icon" type="image/png" href="dist/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="dist/favicon-16x16.png" sizes="16x16" />
+    <style>
+      #toc {
+      position: fixed;
+      left: 0;
+      top: 60px;
+      width: 250px;
+      height: calc(100% - 60px);
+      overflow-y: auto;
+      background-color: #fafafa;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    #swagger-ui {
+      margin-left: 250px;
+    }
+    .toc-path {
+      cursor: pointer;
+      display: block;
+      padding: 5px 0;
+    }
+    .toc-path::before {
+      content: '▶';
+      display: inline-block;
+      margin-right: 5px;
+      transition: transform 0.3s;
+    }
+    .toc-path.expanded::before {
+      transform: rotate(90deg);
+    }
+    #toc ul {
+      list-style-type: none;
+      padding-left: 20px;
+    }
+    #toc > ul {
+      padding-left: 0;
+    }
+    #toc-toggle {
+        position: fixed;
+        left: 250px;
+        top: 70px;
+        z-index: 1000;
+        background-color: rgb(137,191,  4);
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        cursor: pointer;
+        transition: left 0.3s ease-in-out, background-color 0.3s;
+        border-radius: 20px;  /* 圆角 */
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);  /* 添加阴影效果 */
+      }
+      #toc-toggle:hover {
+        background-color: rgb(117, 171, 0);  /* 鼠标悬停时的颜色 */
+      }
+      .toc-hidden #toc-container {
+        transform: translateX(-250px);
+      }
+      .toc-hidden #swagger-ui {
+        margin-left: 0;
+      }
+      .toc-hidden #toc-toggle {
+        left: 0;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
   </head>
 
   <body>
+    <div id="toc-container">
+      <div id="toc"></div>
+    </div>
     <div id="swagger-ui"></div>
+    <button id="toc-toggle">收起目录</button>
     <script src="dist/swagger-ui-bundle.js" charset="UTF-8"> </script>
     <script src="dist/swagger-ui-standalone-preset.js" charset="UTF-8"> </script>
     <script src="dist/swagger-initializer.js" charset="UTF-8"> </script>
+    <script src="dist/toc-generator.js" charset="UTF-8"></script>
   </body>
 </html>
