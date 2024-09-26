@@ -9,13 +9,38 @@ info:
     url: http://springdoc.org
   version: v1.0.0
 servers:
-- url: http://localhost:1000
-  description: Generated server url
+  - url: http://localhost:1000
+    description: Generated server url
 paths:
+  /files:
+    post:
+      tags:
+        - API - 文件处理
+      summary: 解析并返回文件内容
+      description: 上传文件并使用Apache Tika解析文件内容<br>支持解析：doc、docx、ppt、pptx、xls、xlsx、pdf、txt、md、xml、json、html、css、js、java、sql、properties、ini、yaml、yml等文件
+      operationId: parseFileContent
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        "200":
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
   /excels:
     get:
       tags:
-      - API - Excel
+        - API - Excel
       summary: 导出
       description: 查询数据后直接导出<br>流程：查询数据 - 构造Excel文件 - 导出Excel
       operationId: export

@@ -12,3 +12,8 @@ OpenAPI YAML: /v3/api-docs.yaml
 1.直接导出Excel：
     
     查询数据（可传入条件）- 构造Excel文件 - 导出Excel
+
+## 文件处理
+### 解析文件内容（Apache Tika）：
+
+    上传文件 - Apache Tika解析文件内容 - 返回文件内容字符串
